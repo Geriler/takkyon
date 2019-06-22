@@ -17,10 +17,15 @@ class QuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('question');
             $table->string('answer1');
+            $table->string('comment1');
             $table->string('answer2');
+            $table->string('comment2');
             $table->string('answer3');
+            $table->string('comment3');
             $table->string('answer4')->nullable();
+            $table->string('comment4')->nullable();
             $table->string('answer5')->nullable();
+            $table->string('comment5')->nullable();
             $table->integer('level')->unsigned();
             $table->timestamps();
         });

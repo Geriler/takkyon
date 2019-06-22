@@ -26,8 +26,11 @@ class CreateQuestionsRequest extends FormRequest
         return [
             'question' => 'required',
             'answer1' => 'required',
+            'comment1' => 'required',
             'answer2' => 'required',
-            'answer3' => 'required',
+			'comment2' => 'required',
+			'answer3' => 'required',
+			'comment3' => 'required',
 			'level' => 'required',
         ];
     }
