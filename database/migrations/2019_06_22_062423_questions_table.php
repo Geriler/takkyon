@@ -19,8 +19,8 @@ class QuestionsTable extends Migration
             $table->string('answer1');
             $table->string('answer2');
             $table->string('answer3');
-            $table->string('answer4');
-            $table->string('answer5');
+            $table->string('answer4')->nullable();
+            $table->string('answer5')->nullable();
             $table->integer('level')->unsigned();
             $table->timestamps();
         });
