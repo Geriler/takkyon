@@ -1,3 +1,7 @@
+<?php
+use App\Progress;
+$progress = Progress::find(Auth::user()->id);
+?>
 @extends('layouts.app')
 
 @section('content')
@@ -5,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Прогресс</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +17,28 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Первый уровень</td>
+                            <td>{{ $progress->progress1 }}/10</td>
+                        </tr>
+                        <tr>
+                            <td>Второй уровень</td>
+                            <td>{{ $progress->progress2 }}/10</td>
+                        </tr>
+                        <tr>
+                            <td>Третий уровень</td>
+                            <td>{{ $progress->progress3 }}/10</td>
+                        </tr>
+                        <tr>
+                            <td>Четвертый уровень</td>
+                            <td>{{ $progress->progress4 }}/10</td>
+                        </tr>
+                        <tr>
+                            <td>Пятый уровень</td>
+                            <td>{{ $progress->progress5 }}/10</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
