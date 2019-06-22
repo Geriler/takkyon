@@ -16,15 +16,15 @@
                 <td>Пятый уровень</td>
                 <td></td>
             </tr>
-            @foreach($progresses as $progress)
+            @foreach($progress as $prog)
                 <tr>
-                    <td>{{ $progress->user_id }}</td>
-                    <td>{{ $progress->progress1 }}</td>
-                    <td>{{ $progress->progress2 }}</td>
-                    <td>{{ $progress->progress3 }}</td>
-                    <td>{{ $progress->progress4 }}</td>
-                    <td>{{ $progress->progress5 }}</td>
-                    <td><a href="{{ route('progress.edit', $progress->id) }}">Редактировать</a></td>
+                    <td>{{ $prog->user_id }}</td>
+                    <td>{{ $prog->progress1 }}</td>
+                    <td>{{ $prog->progress2 }}</td>
+                    <td>{{ $prog->progress3 }}</td>
+                    <td>{{ $prog->progress4 }}</td>
+                    <td>{{ $prog->progress5 }}</td>
+                    <td><a href="{{ route('progress.edit', $prog->id) }}">Редактировать</a></td>
                 </tr>
             @endforeach
         </table>

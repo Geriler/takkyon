@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProgressTables extends Migration
+class ProgressesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -23,9 +23,6 @@ class ProgressTables extends Migration
             $table->integer('progress5');
             $table->timestamps();
         });
-        Schema::table('progresses', function (Blueprint $table) {
-        	$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-		});
     }
 
     /**

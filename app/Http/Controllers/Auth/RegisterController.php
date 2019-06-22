@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Progress;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -63,12 +64,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
 			// TODO: Поменять на 0, когда пойдёт на прод
 			'is_admin' => 1,
         ]);
+        Progress::create([
+        	'user_id' => $user->id,
+        	'progress1' => 0,
+        	'progress2' => 0,
+        	'progress3' => 0,
+        	'progress4' => 0,
+        	'progress5' => 0,
+		]);
+        return $user;
     }
 }
