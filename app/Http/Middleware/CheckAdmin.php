@@ -15,9 +15,10 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-    	if ($request->user()->is_admin == 0)
-    		return redirect('/');
+    	if (is_object($request->user()))
+    		if ($request->user()->is_admin == 1)
+				return $next($request);
 
-        return $next($request);
-    }
+		return redirect('/');
+	}
 }
