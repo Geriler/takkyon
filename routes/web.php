@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Middleware\CheckAdmin;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('questions', 'QuestionsController')->middleware('auth');
+Route::resource('questions', 'QuestionsController')->middleware(CheckAdmin::class);
 
-Route::resource('progress', 'ProgressController')->middleware('auth');
+Route::resource('progress', 'ProgressController')->middleware(CheckAdmin::class);
