@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('questions', 'QuestionsController');
+Route::resource('questions', 'QuestionsController')->middleware('auth');
+
+Route::resource('progress', 'ProgressController')->middleware('auth');
