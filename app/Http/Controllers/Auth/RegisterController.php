@@ -67,7 +67,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-			'is_admin' => 0,
+			// TODO: Поменять на 0, когда пойдёт на прод
+			'is_admin' => 1,
         ]);
     }
 }
