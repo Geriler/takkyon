@@ -59,8 +59,8 @@ class MapController extends Controller
 		}
 		$progress = Progress::all()->where('user_id', Auth::user()->id)[0];
 		$prog = "progress{$id}";
-		if ($progress->$prog < $correct_answer) {
-			$progress->$prog = $correct_answer;
+		if ($progress->$prog < $count_answer) {
+			$progress->$prog = $count_answer;
 			$progress->save();
 		}
 		return view('map.answer', [
