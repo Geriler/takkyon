@@ -71,7 +71,7 @@ $user = Auth::user();
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Домашняя</a>
+                        <a href="{{ url('/home') }}">Личный кабинет</a>
                     @else
                         <a href="{{ route('login') }}">Авторизация</a>
 
@@ -90,9 +90,12 @@ $user = Auth::user();
                 <div class="links">
                     @if (is_object($user))
                         @if($user->is_admin)
-                            <a href="{{ route('questions.index') }}">Вопросы</a>
-                            <a href="{{ route('progress.index') }}">Прогресс</a>
+                            <div class="links">
+                                <a href="{{ route('questions.index') }}">Вопросы</a>
+                                <a href="{{ route('progress.index') }}">Прогресс</a>
+                            </div>
                         @endif
+                        <a href="/map">Карта уровней</a>
                     @endif
                 </div>
             </div>
