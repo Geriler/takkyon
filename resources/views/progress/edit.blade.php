@@ -17,7 +17,7 @@
             <input type="number" min="0" max="10" name="progress4" class="form-control" value="{{ $progress->progress4 }}" placeholder="Прогресс">
             <input type="number" min="0" max="10" name="progress5" class="form-control" value="{{ $progress->progress5 }}" placeholder="Прогресс">
             <button class="btn btn-primary">Сохранить</button>
-            <a class="btn btn-primary" href="{{ route('progress.show', $progress->id) }}">Назад</a>
+            <a class="btn btn-primary" href="{{ route('progress.index', $progress->id) }}">Назад</a>
         </form>
     </div>
 @endsection
