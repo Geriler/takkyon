@@ -34,5 +34,5 @@ Route::get('map/{id}', 'MapController@index')->name('map.index')->middleware(Che
 
 Route::post('map/{id}/check', 'MapController@checkAnswer')->name('map.check')->middleware('auth');
 Route::get('map/{id}/check', function ($id) {
-	return view('map');
+	return redirect('/map');
 })->name('map.check')->middleware('auth');
