@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <div class="card-deck">
     @foreach($results as $result)
         <div class="card">
             <div class="card-header">{{ $result['question'] }}</div>
@@ -15,6 +14,5 @@
             </div>
         </div>
     @endforeach
-    </div>
     <a class="btn btn-primary" href="/map">Назад</a>
 @endsection
