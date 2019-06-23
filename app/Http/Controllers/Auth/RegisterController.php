@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
 			// TODO: Поменять на 0, когда пойдёт на прод
-			'is_admin' => 1,
+			'is_admin' => 0,
         ]);
         Progress::create([
         	'user_id' => $user->id,

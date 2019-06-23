@@ -12,6 +12,7 @@
 */
 
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Middleware\CheckLevel;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,3 +25,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('questions', 'QuestionsController')->middleware(CheckAdmin::class);
 
 Route::resource('progress', 'ProgressController')->middleware(CheckAdmin::class);
+
+Route::get('map', function() {
+	return view('map');
+})->middleware('auth');
+
+Route::get('map/{id}', 'MapController@index')->name('map.index')->middleware(CheckLevel::class);
+
+Route::post('map/{id}/check', 'MapController@checkAnswer')->name('map.check')->middleware('auth');
+Route::get('map/{id}/check', function ($id) {
+	return view('map');
+})->name('map.check')->middleware('auth');
