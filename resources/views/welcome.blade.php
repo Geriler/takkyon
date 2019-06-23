@@ -73,7 +73,7 @@ $user = Auth::user();
                     @auth
                         <a href="{{ url('/home') }}">Личный кабинет</a>
                     @else
-                        <a href="{{ route('login') }}">Авторизация</a>
+                        <a href="{{ route('login') }}">Вход</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Регистрация</a>
