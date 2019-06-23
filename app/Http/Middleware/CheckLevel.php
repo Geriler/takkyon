@@ -32,12 +32,12 @@ class CheckLevel
 				}
 				return redirect('/map');
 			case '/map/4':
-				if ($progress->progress4 >= 7) {
+				if ($progress->progress3 >= 7) {
 					return $next($request);
 				}
 				return redirect('/map');
 			case '/map/5':
-				if ($progress->progress5 >= 7) {
+				if ($progress->progress4 >= 7) {
 					return $next($request);
 				}
 				return redirect('/map');
