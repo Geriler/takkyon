@@ -84,6 +84,7 @@ $user = Auth::user();
 
             <div class="content">
                 <div class="title m-b-md">
+                    <img width="250px" src="{{ asset('img/logo.png') }}"><br>
                     Takyon
                 </div>
 
