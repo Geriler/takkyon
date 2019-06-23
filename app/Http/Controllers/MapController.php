@@ -11,6 +11,7 @@ class MapController extends Controller
     public function index($id) {
 		$questions = Questions::all()->where('level', $id);
 		$questions = $questions->shuffle()->all();
+		$questions = array_slice($questions, 0, 10);
 		return view('map.index', [
 			'id' => $id,
 			'questions' => $questions,
