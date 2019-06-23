@@ -58,7 +58,8 @@ class MapController extends Controller
 				];
 			}
 		}
-		$progress = Progress::all()->where('user_id', Auth::user()->id)[0];
+		$user_id = Auth::user()->id;
+		$progress = Progress::all()->where('user_id', $user_id)[$user_id - 1];
 		$prog = "progress{$id}";
 		if ($progress->$prog < $count_answer) {
 			$progress->$prog = $count_answer;
