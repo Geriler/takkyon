@@ -5,8 +5,19 @@
 @endsection
 
 @section('content')
-    <a class="btn btn-primary" href="{{ route('questions.index') }}">Назад</a>
-    <a class="btn btn-primary" href="{{ route('questions.edit', $question->id) }}">Редактировать вопрос</a>
+    <div class="card-deck" style="margin-left: 0; margin-right: 0;">
+        <div>
+            <a class="btn btn-primary btn-block" href="{{ route('questions.index') }}">Назад</a>
+        </div>
+        <div>
+            <a class="btn btn-primary btn-block" href="{{ route('questions.edit', $question->id) }}">Редактировать вопрос</a>
+        </div>
+        <form action="{{ route('questions.destroy', $question->id) }}" method="post">
+            {{ method_field('delete') }}
+            {{ csrf_field() }}
+            <button class="btn btn-primary btn-block" type="submit">Удалить вопрос</button>
+        </form>
+    </div>
     <div class="question">
         <table class="table table-striped">
             <tr>
