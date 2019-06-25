@@ -41,6 +41,12 @@ $progress = Progress::find(Auth::user()->id);
                     </table>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">Настройки</div>
+                <div class="card-body">
+                    <a class="btn btn-primary" href="{{ route('change') }}">Изменить информацию</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

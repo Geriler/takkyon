@@ -71,7 +71,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
 			'is_admin' => 0,
-			'earlier_login' => 1,
         ]);
         Progress::create([
         	'user_id' => $user->id,
