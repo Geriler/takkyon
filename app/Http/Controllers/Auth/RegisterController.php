@@ -70,8 +70,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-			// TODO: Поменять на 0, когда пойдёт на прод
 			'is_admin' => 0,
+			'earlier_login' => 1,
         ]);
         Progress::create([
         	'user_id' => $user->id,

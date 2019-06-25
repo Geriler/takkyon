@@ -12,6 +12,7 @@
 */
 
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Middleware\CheckEarlierLogin;
 use App\Http\Middleware\CheckLevel;
 
 Route::get('/', function () {
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware(CheckEarlierLogin::class);
 
 Route::resource('questions', 'QuestionsController')->middleware(CheckAdmin::class);
 
@@ -36,3 +37,9 @@ Route::post('map/{id}/check', 'MapController@checkAnswer')->name('map.check')->m
 Route::get('map/{id}/check', function ($id) {
 	return redirect('/map');
 })->name('map.check')->middleware('auth');
+
+Route::get('/change', function () {
+	return view('auth.change');
+})->name('change');
+
+Route::put('changeEmailAndPassword', 'EarlierController@changeEmailAndPassword')->name('changeEmailAndPassword')->middleware('auth');
