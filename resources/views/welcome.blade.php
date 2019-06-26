@@ -7,7 +7,7 @@ $user = Auth::user();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Takyon</title>
+        <title>Takkyon</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -85,7 +85,7 @@ $user = Auth::user();
             <div class="content">
                 <div class="title m-b-md">
                     <img width="250px" src="{{ asset('img/logo.png') }}"><br>
-                    Takyon
+                    Takkyon
                 </div>
 
                 <div class="links">
