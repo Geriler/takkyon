@@ -20,7 +20,7 @@
 			?>
 
         <div class="question">
-            <h4 class="question-title">{{ $question->question }}</h4>
+            <h4 class="question-title">{!! $question->question !!}</h4>
             <div>
                 <input id="1{{ $question->id }}" type="radio" name="answer{{ $question->id }}" value="{{ $answers[0] }}"> <label for="1{{ $question->id }}">{{ $answers[0] }}</label><br>
                 <input id="2{{ $question->id }}" type="radio" name="answer{{ $question->id }}" value="{{ $answers[1] }}"> <label for="2{{ $question->id }}">{{ $answers[1] }}</label><br>
