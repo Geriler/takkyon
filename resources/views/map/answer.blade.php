@@ -7,10 +7,10 @@
 @section('content')
     @foreach($results as $result)
         <div class="card">
-            <div class="card-header">{{ $result['question'] }}</div>
+            <div class="card-header">{!! $result['question'] !!}</div>
             <div class="card-body">
                 <div class="card-title">Ваш ответ: {{ $result['answer'] }}</div>
-                <div class="card-text" style="@if($result['correct_answer']) color: green; @else color: red; @endif">{{ $result['comment'] }}</div>
+                <div class="card-text" style="@if($result['correct_answer']) color: green; @else color: red; @endif">{!! $result['comment'] !!}</div>
             </div>
         </div>
     @endforeach
